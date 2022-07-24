@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="ContactsAndOrders.Views.ContactView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ContactsAndOrders.Views" 
+             xmlns:vm="clr-namespace:ContactsAndOrders.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=vm:ContactViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="250"/>
+            <ColumnDefinition Width="3" MinWidth="3"/>
+            <ColumnDefinition Width="3*" MinWidth="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" MinWidth="250">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60" MinHeight="60"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <ListBox ItemsSource="{Binding Contacts, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedContact}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,3,0"/>
+                                <TextBlock Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,3,0"/>
+                                <TextBlock Text="{Binding Path=Patronymic, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="10*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button Command="{Binding AddCommand}" Content="Добавить" VerticalContentAlignment="Center" VerticalAlignment="Stretch" MinWidth="40" Margin="5"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button Command="{Binding EditCommand}" Content="Изменить" VerticalContentAlignment="Center" VerticalAlignment="Stretch" MinWidth="40" Margin="5"/>
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Button Command="{Binding DeleteCommand}" Content="Удалить" VerticalContentAlignment="Center" VerticalAlignment="Stretch" MinWidth="40" Margin="5"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60" MinHeight="60"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <ScrollViewer IsEnabled="{Binding Editable, UpdateSourceTrigger=PropertyChanged}" VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Stretch" VerticalAlignment="Stretch">
+                    <StackPanel DataContext="{Binding Path=SelectedContact}" Height="320"  VerticalAlignment="Top">
+                        <TextBlock Text="Имя" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5" />
+                        <TextBlock Text="Фамилия" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                        <TextBlock Text="Отчество" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=Patronymic, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                        <TextBlock Text="Город" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=City, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                        <TextBlock Text="Адрес" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=Adress, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                        <TextBlock Text="Телефон" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                        <TextBlock Text="Email" Margin="5,0,0,0"/>
+                        <TextBox Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="1" Height="60" MaxHeight="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" MinWidth="50">
+                    <Button Command="{Binding SaveCommand}" CommandParameter="{Binding SelectedContact}" Content="Сохранить" Width="100" Height="50" MinWidth="50" Margin="5"/>
+                </Grid>
+                <Grid Grid.Column="1" MinWidth="50">
+                    <Button Command="{Binding OpenOrdersCommand}" CommandParameter="{Binding SelectedContact}" Content="Открыть заказы" Width="100" Height="50" MinWidth="50" VerticalAlignment="Bottom" Margin="5"/>
+                </Grid>
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
