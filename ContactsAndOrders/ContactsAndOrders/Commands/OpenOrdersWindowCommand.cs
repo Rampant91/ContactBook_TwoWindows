@@ -1,13 +1,6 @@
-﻿using ContactsAndOrders.DbRealization;
-using ContactsAndOrders.ViewModels;
+﻿using ContactsAndOrders.ViewModels;
 using ContactsAndOrders.Windows;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace ContactsAndOrders.Commands
 {
@@ -15,9 +8,9 @@ namespace ContactsAndOrders.Commands
     {
         private readonly ContactViewModel _contactViewModel;
 
-        public OpenOrdersWindowCommand(ContactViewModel contactViewMode)
+        public OpenOrdersWindowCommand(ContactViewModel contactViewModel)
         {
-            _contactViewModel = contactViewMode;
+            _contactViewModel = contactViewModel;
             _contactViewModel.PropertyChanged += ContactViewModelPropertyChanged;
         }
 
@@ -36,11 +29,10 @@ namespace ContactsAndOrders.Commands
 
         public override void Execute(object? parameter)
         {
-            Window _ordersWindow = new OrdersWindow()
+            OrdersWindow ordersWindow = new OrdersWindow()
             {
-                DataContext = _contactViewModel
+                DataContext = new OrderViewModel(_contactViewModel.SelectedContact)
             };
-            _ordersWindow.Show();
         }
     }
 }

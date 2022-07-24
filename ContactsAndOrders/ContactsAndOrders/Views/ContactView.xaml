@@ -20,14 +20,14 @@
                 <RowDefinition Height="60" MinHeight="60"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <ListBox ItemsSource="{Binding Contacts, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedContact}">
+                <ListBox ItemsSource="{Binding Contacts}" SelectedItem="{Binding SelectedContact}" MouseDoubleClick="ListBox_MouseDoubleClick">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
+                            <WrapPanel>
                                 <TextBlock Text="{Binding Path=LastName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,3,0"/>
                                 <TextBlock Text="{Binding Path=FirstName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,3,0"/>
                                 <TextBlock Text="{Binding Path=Patronymic, UpdateSourceTrigger=PropertyChanged}"/>
-                            </StackPanel>
+                            </WrapPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -69,7 +69,7 @@
                         <TextBlock Text="Город" Margin="5,0,0,0"/>
                         <TextBox Text="{Binding Path=City, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
                         <TextBlock Text="Адрес" Margin="5,0,0,0"/>
-                        <TextBox Text="{Binding Path=Adress, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
+                        <TextBox Text="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
                         <TextBlock Text="Телефон" Margin="5,0,0,0"/>
                         <TextBox Text="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,10,5"/>
                         <TextBlock Text="Email" Margin="5,0,0,0"/>
@@ -88,7 +88,6 @@
                 <Grid Grid.Column="1" MinWidth="50">
                     <Button Command="{Binding OpenOrdersCommand}" CommandParameter="{Binding SelectedContact}" Content="Открыть заказы" Width="100" Height="50" MinWidth="50" VerticalAlignment="Bottom" Margin="5"/>
                 </Grid>
-                
             </Grid>
         </Grid>
     </Grid>

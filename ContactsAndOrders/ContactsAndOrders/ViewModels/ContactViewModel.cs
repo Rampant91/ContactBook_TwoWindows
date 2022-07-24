@@ -16,7 +16,7 @@ namespace ContactsAndOrders.ViewModels
         public ICommand SaveCommand { get; set; }
         #endregion
 
-        #region Contacts
+        #region ObservableCollections
         private ObservableCollection<Contact>? _contacts;
         public ObservableCollection<Contact>? Contacts
         {
@@ -25,6 +25,17 @@ namespace ContactsAndOrders.ViewModels
             {
                 _contacts = value;
                 OnPropertyChanged(nameof(Contacts));
+            }
+        }
+
+        private ObservableCollection<Order>? _orders;
+        public ObservableCollection<Order>? Orders
+        {
+            get => _orders;
+            set
+            {
+                _orders = value;
+                OnPropertyChanged(nameof(Orders));
             }
         }
         #endregion
@@ -87,14 +98,14 @@ namespace ContactsAndOrders.ViewModels
             }
         }
 
-        private string? _adress;
-        public string? Adress
+        private string? _address;
+        public string? Address
         {
-            get => _adress;
+            get => _address;
             set
             {
-                _adress = value;
-                OnPropertyChanged(nameof(Adress));
+                _address = value;
+                OnPropertyChanged(nameof(Address));
             }
         }
 

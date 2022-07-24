@@ -36,8 +36,8 @@ namespace ContactsAndOrders.Commands
                 db.Contacts.Add(contact);
                 _contactViewModel.SelectedContact = contact;
                 _contactViewModel.Editable = true;
-                db.SaveChanges();
                 _contactViewModel.Contacts.Add(contact);
+                db.SaveChanges();
             }
         }
     }

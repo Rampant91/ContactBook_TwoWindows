@@ -3,10 +3,70 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ContactsAndOrders.Views"
+             xmlns:local="clr-namespace:ContactsAndOrders.Views" 
+             xmlns:vm="clr-namespace:ContactsAndOrders.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=vm:OrderViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="700">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="250"/>
+            <ColumnDefinition Width="3" MinWidth="3"/>
+            <ColumnDefinition Width="3*" MinWidth="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" MinWidth="250">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70" MinHeight="70"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <ListBox ItemsSource="{Binding Path=Orders}" SelectedItem="{Binding SelectedOrder}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox IsEnabled="False" Text="{Binding Path=Name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+            <Grid Grid.Row="1" >
+                <StackPanel Orientation="Horizontal">
+                    <Button Command="{Binding AddOrder}" Height="60" Width="60" VerticalAlignment="Center" Margin="20,10,0,10">
+                        <TextBlock TextAlignment="Center"> Добавить <LineBreak/> заказ</TextBlock>
+                    </Button>
+                    <Button Command="{Binding EditOrder}" CommandParameter="{Binding SelectedOrder}" Height="60" Width="60" VerticalAlignment="Center" Margin="20,10,0,10">
+                        <TextBlock TextAlignment="Center"> Изменить <LineBreak/> заказ</TextBlock>
+                    </Button>
+                    <Button Command="{Binding DeleteOrder}" CommandParameter="{Binding SelectedOrder}" Height="60" Width="60" VerticalAlignment="Center" Margin="20,10,0,10">
+                        <TextBlock TextAlignment="Center"> Удалить <LineBreak/> заказ</TextBlock>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" IsEnabled="{Binding Path=Editable, UpdateSourceTrigger=PropertyChanged}">
+                    <StackPanel DataContext="{Binding Path=SelectedOrder}">
+                        <TextBlock Text="Наименование" Height="20" Margin="10,10,10,0"/>
+                        <TextBox Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="10,0,10,10"/>
+                        <TextBlock Text="Цена" Height="20" Margin="10,0,10,0"/>
+                        <TextBox Text="{Binding Path=Price, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="10,0,10,10"/>
+                        <TextBlock Text="Количество" Height="20" Margin="10,0,10,0"/>
+                        <TextBox Text="{Binding Path=Amount, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="10,0,10,10"/>
+                        <TextBlock Text="Дата" Height="20" Margin="10,0,10,0"/>
+                        <TextBox Text="{Binding Path=Date, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="10,0,10,10"/>
+                        <TextBlock Text="Описание" Height="20" Margin="10,0,10,0"/>
+                        <TextBox Text="{Binding Path=Discription, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="10,0,10,10"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button Grid.Row="1" Command="{Binding SaveOrder}" CommandParameter="{Binding SelectedOrder}" Content="Сохранить" Height="60" Margin="10"/>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

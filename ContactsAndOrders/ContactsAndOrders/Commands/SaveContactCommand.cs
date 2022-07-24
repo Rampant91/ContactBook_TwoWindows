@@ -1,5 +1,4 @@
-﻿using ContactsAndOrders.Commands;
-using ContactsAndOrders.DbRealization;
+﻿using ContactsAndOrders.DbRealization;
 using ContactsAndOrders.ViewModels;
 using System.ComponentModel;
 using System.Linq;
@@ -23,9 +22,10 @@ namespace ContactsAndOrders.Commands
                 || e.PropertyName == nameof(ContactViewModel.LastName)
                 || e.PropertyName == nameof(ContactViewModel.Patronymic)
                 || e.PropertyName == nameof(ContactViewModel.City)
-                || e.PropertyName == nameof(ContactViewModel.Adress)
+                || e.PropertyName == nameof(ContactViewModel.Address)
                 || e.PropertyName == nameof(ContactViewModel.Phone)
-                || e.PropertyName == nameof(ContactViewModel.Email))
+                || e.PropertyName == nameof(ContactViewModel.Email)
+                || e.PropertyName == nameof(ContactViewModel.Editable))
             {
                 OnCanExecuteChanged();
             }
@@ -33,7 +33,7 @@ namespace ContactsAndOrders.Commands
 
         public override bool CanExecute(object? parameter)
         {
-            return _contactViewModel.SelectedContact != null;
+            return _contactViewModel.SelectedContact != null && _contactViewModel.Editable == true;
         }
 
         public override void Execute(object? parameter)
