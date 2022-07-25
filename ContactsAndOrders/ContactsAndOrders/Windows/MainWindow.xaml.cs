@@ -1,8 +1,8 @@
-﻿using ContactsAndOrders.Models;
+﻿using ContactBook_TwoWindows.Models;
 using System;
 using System.Windows;
 
-namespace ContactsAndOrders.Windows
+namespace ContactBook_TwoWindows.Windows
 {
     public partial class MainWindow : Window
     {

@@ -1776,11 +1776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactBook\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
+      "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactBook\\ContactBook_TwoWindows\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
       "projectName": "ContactsAndOrders",
-      "projectPath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactBook\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
+      "projectPath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactBook\\ContactBook_TwoWindows\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactBook\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\obj\\",
+      "outputPath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactBook\\ContactBook_TwoWindows\\ContactsAndOrders\\ContactsAndOrders\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config",

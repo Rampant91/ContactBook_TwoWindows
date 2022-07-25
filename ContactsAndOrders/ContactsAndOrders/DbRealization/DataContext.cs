@@ -1,7 +1,7 @@
-﻿using ContactsAndOrders.Models;
+﻿using ContactBook_TwoWindows.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContactsAndOrders.DbRealization
+namespace ContactBook_TwoWindows.DbRealization
 {
     public class DataContext : DbContext
     {

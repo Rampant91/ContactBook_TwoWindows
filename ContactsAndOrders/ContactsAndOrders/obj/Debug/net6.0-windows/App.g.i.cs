@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using ContactsAndOrders;
+using ContactBook_TwoWindows;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -33,7 +33,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace ContactsAndOrders {
+namespace ContactBook_TwoWindows {
     
     
     /// <summary>
@@ -48,7 +48,7 @@ namespace ContactsAndOrders {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.7.0")]
         public static void Main() {
-            ContactsAndOrders.App app = new ContactsAndOrders.App();
+            ContactBook_TwoWindows.App app = new ContactBook_TwoWindows.App();
             app.Run();
         }
     }

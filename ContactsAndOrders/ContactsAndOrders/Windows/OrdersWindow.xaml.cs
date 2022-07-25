@@ -1,7 +1,7 @@
-﻿using ContactsAndOrders.Models;
+﻿using ContactBook_TwoWindows.Models;
 using System.Windows;
 
-namespace ContactsAndOrders.Windows
+namespace ContactBook_TwoWindows.Windows
 {
     public partial class OrdersWindow : Window
     {

@@ -9,8 +9,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using ContactsAndOrders.Views;
-using ContactsAndOrders.Windows;
+using ContactBook_TwoWindows.Views;
+using ContactBook_TwoWindows.Windows;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -34,7 +34,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace ContactsAndOrders.Windows {
+namespace ContactBook_TwoWindows.Windows {
     
     
     /// <summary>

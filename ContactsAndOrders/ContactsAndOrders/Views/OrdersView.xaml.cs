@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace ContactsAndOrders.Views
+namespace ContactBook_TwoWindows.Views
 {
     public partial class OrdersView : UserControl
     {

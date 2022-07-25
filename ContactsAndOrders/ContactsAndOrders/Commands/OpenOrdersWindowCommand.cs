@@ -1,9 +1,9 @@
-﻿using ContactsAndOrders.ViewModels;
-using ContactsAndOrders.Windows;
+﻿using ContactBook_TwoWindows.ViewModels;
+using ContactBook_TwoWindows.Windows;
 using System.ComponentModel;
 using System.Windows;
 
-namespace ContactsAndOrders.Commands
+namespace ContactBook_TwoWindows.Commands
 {
     public class OpenOrdersWindowCommand : BaseCommand
     {

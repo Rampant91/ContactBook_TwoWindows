@@ -1,9 +1,9 @@
-﻿using ContactsAndOrders.DbRealization;
-using ContactsAndOrders.Models;
-using ContactsAndOrders.ViewModels;
+﻿using ContactBook_TwoWindows.DbRealization;
+using ContactBook_TwoWindows.Models;
+using ContactBook_TwoWindows.ViewModels;
 using System.ComponentModel;
 
-namespace ContactsAndOrders.Commands
+namespace ContactBook_TwoWindows.Commands
 {
     public class AddContactCommand : BaseCommand
     {

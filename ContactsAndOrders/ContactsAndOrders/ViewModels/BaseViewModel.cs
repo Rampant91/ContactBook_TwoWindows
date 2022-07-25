@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace ContactsAndOrders.ViewModels
+namespace ContactBook_TwoWindows.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

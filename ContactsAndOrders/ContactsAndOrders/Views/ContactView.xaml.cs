@@ -1,9 +1,9 @@
-﻿using ContactsAndOrders.Models;
-using ContactsAndOrders.ViewModels;
-using ContactsAndOrders.Windows;
+﻿using ContactBook_TwoWindows.Models;
+using ContactBook_TwoWindows.ViewModels;
+using ContactBook_TwoWindows.Windows;
 using System.Windows.Controls;
 
-namespace ContactsAndOrders.Views
+namespace ContactBook_TwoWindows.Views
 {
     public partial class ContactView : UserControl
     {

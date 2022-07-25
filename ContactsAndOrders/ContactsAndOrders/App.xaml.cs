@@ -1,8 +1,8 @@
-﻿using ContactsAndOrders.ViewModels;
-using ContactsAndOrders.Windows;
+﻿using ContactBook_TwoWindows.ViewModels;
+using ContactBook_TwoWindows.Windows;
 using System.Windows;
 
-namespace ContactsAndOrders
+namespace ContactBook_TwoWindows
 {
     public partial class App : Application
     {

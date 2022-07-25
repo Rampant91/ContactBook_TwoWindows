@@ -1,7 +1,7 @@
-﻿<Application x:Class="ContactsAndOrders.App"
+﻿<Application x:Class="ContactBook_TwoWindows.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ContactsAndOrders">
+             xmlns:local="clr-namespace:ContactBook_TwoWindows">
     <Application.Resources>
          
     </Application.Resources>

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ContactsAndOrders.Models
+namespace ContactBook_TwoWindows.Models
 {
     public class Contact
     {

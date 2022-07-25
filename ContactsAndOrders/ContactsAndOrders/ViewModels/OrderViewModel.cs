@@ -1,11 +1,11 @@
-﻿using ContactsAndOrders.Commands;
-using ContactsAndOrders.DbRealization;
-using ContactsAndOrders.Models;
+﻿using ContactBook_TwoWindows.Commands;
+using ContactBook_TwoWindows.DbRealization;
+using ContactBook_TwoWindows.Models;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
-namespace ContactsAndOrders.ViewModels
+namespace ContactBook_TwoWindows.ViewModels
 {
     public class OrderViewModel : BaseViewModel
     {
