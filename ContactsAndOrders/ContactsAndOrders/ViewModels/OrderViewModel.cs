@@ -30,17 +30,6 @@ namespace ContactsAndOrders.ViewModels
         #endregion
 
         #region SelectedItems
-        private Contact? _selectedContact;
-        public Contact? SelectedContact
-        {
-            get => _selectedContact;
-            set
-            {
-                _selectedContact = value;
-                OnPropertyChanged(nameof(SelectedContact));
-            }
-        }
-
         private Order? _selectedOrder;
         public Order? SelectedOrder
         {
@@ -54,6 +43,17 @@ namespace ContactsAndOrders.ViewModels
         #endregion
 
         #region OrderProperties
+        private int _contactId;
+        public int ContactId
+        {
+            get => _contactId;
+            set
+            {
+                _contactId = value;
+                OnPropertyChanged(nameof(ContactId));
+            }
+        }
+
         private string? _name;
         public string? Name
         {
@@ -122,18 +122,18 @@ namespace ContactsAndOrders.ViewModels
         #endregion
 
         #region Constructor
-        public OrderViewModel(Contact selectedContact)
+        public OrderViewModel(int contactId)
         {
             AddOrder = new AddOrderCommand(this);
             DeleteOrder = new DeleteOrderCommand(this);
             EditOrder = new EditOrderCommand(this);
             SaveOrder = new SaveOrderCommand(this);
-            SelectedContact = selectedContact;
+            ContactId = contactId;
             using (DataContext db = new DataContext())
             {
                 if (db.Orders != null)
                 {
-                    Orders = new ObservableCollection<Order>(db.Orders.Where(x => x.ContactId == SelectedContact.ContactId));
+                    Orders = new ObservableCollection<Order>(db.Orders.Where(x => x.ContactId == contactId));
                 }
                 else
                 {

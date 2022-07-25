@@ -1,6 +1,7 @@
 ﻿using ContactsAndOrders.ViewModels;
 using ContactsAndOrders.Windows;
 using System.ComponentModel;
+using System.Windows;
 
 namespace ContactsAndOrders.Commands
 {
@@ -31,8 +32,9 @@ namespace ContactsAndOrders.Commands
         {
             OrdersWindow ordersWindow = new OrdersWindow()
             {
-                DataContext = new OrderViewModel(_contactViewModel.SelectedContact)
+                DataContext = new OrderViewModel(_contactViewModel.SelectedContact.ContactId)
             };
+            ordersWindow.ShowDialog();
         }
     }
 }

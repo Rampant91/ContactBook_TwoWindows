@@ -8,8 +8,6 @@ namespace ContactsAndOrders.Windows
         public OrdersWindow()
         {
             InitializeComponent();
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            Show();
         }
     }
 }
