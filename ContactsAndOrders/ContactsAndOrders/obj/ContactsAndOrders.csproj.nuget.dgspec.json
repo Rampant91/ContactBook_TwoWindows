@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj": {}
+    "C:\\Users\\Andrey\\source\\repos\\CSharp\\Console\\MyContactBookWithOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj": {
+    "C:\\Users\\Andrey\\source\\repos\\CSharp\\Console\\MyContactBookWithOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
+        "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\CSharp\\Console\\MyContactBookWithOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
         "projectName": "ContactsAndOrders",
-        "projectPath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
+        "projectPath": "C:\\Users\\Andrey\\source\\repos\\CSharp\\Console\\MyContactBookWithOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\obj\\",
+        "outputPath": "C:\\Users\\Andrey\\source\\repos\\CSharp\\Console\\MyContactBookWithOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrey\\AppData\\Roaming\\NuGet\\NuGet.Config",

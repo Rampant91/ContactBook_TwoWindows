@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HJNQNuxHX7/vdh60eN/OpMDLcEgwSsLVrxftO/BF9+VaiUnzMjDF17USUAQqhuPilXhVsBXKVYknJhgWxMCjrw==",
+  "dgSpecHash": "dMZOowJXrDEkfC51p2g7OGZ8m65gvmazVSGL3S5PALVnBkZlp+BERtkiotFf2YXiR9hFJwdZqd8yLROTW7AA8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\Rampant91\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
+  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\CSharp\\Console\\MyContactBookWithOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders\\ContactsAndOrders.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
