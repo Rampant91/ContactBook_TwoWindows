@@ -33,7 +33,7 @@ namespace ContactsAndOrders.Commands
             using (DataContext db = new DataContext())
             {
                 Order order = new Order();
-                order.ContactId = _orderViewModel.SelectedContact.ContactId;
+                order.ContactId = _orderViewModel.ContactId;
                 db.Orders.Add(order);
                 _orderViewModel.SelectedOrder = order;
                 _orderViewModel.Editable = true;

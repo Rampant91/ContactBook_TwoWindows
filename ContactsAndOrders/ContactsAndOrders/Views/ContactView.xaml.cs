@@ -16,8 +16,9 @@ namespace ContactsAndOrders.Views
         {
             OrdersWindow ordersWindow = new OrdersWindow()
             {
-                DataContext = new OrderViewModel((Contact)((ListBox)sender).SelectedItem)
+                DataContext = new OrderViewModel(((Contact)((ListBox)sender).SelectedItem).ContactId)
             };
+            ordersWindow.ShowDialog();
         }
     }
 }
