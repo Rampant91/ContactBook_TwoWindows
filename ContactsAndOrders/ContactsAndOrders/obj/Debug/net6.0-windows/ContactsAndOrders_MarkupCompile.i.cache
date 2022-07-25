@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Andrey\source\repos\Rampant91\ContactsAndOrders\ContactsAndOrders\ContactsAndOrders\obj\Debug\net6.0-windows\
+C:\Users\Andrey\source\repos\Rampant91\ContactBook\ContactsAndOrders\ContactsAndOrders\ContactsAndOrders\obj\Debug\net6.0-windows\
 ContactsAndOrders
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Andrey\source\repos\Rampant91\ContactsAndOrders\ContactsAndOrders\ContactsAndOrders\App.xaml
+C:\Users\Andrey\source\repos\Rampant91\ContactBook\ContactsAndOrders\ContactsAndOrders\ContactsAndOrders\App.xaml
 41084860035
 
 24-1780984237
 214204406577
 Views\ContactView.xaml;Views\OrdersView.xaml;Windows\MainWindow.xaml;Windows\OrdersWindow.xaml;
 
-True
+False
 

@@ -54,7 +54,7 @@ namespace ContactsAndOrders.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ContactsAndOrders;component/views/contactview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ContactsAndOrders;V1.0.0.0;component/views/contactview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\ContactView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
