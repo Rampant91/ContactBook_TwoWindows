@@ -17,8 +17,8 @@ namespace ContactBook_TwoWindows.ViewModels
         #endregion
 
         #region Orders
-        private ObservableCollection<Order>? _orders;
-        public ObservableCollection<Order>? Orders
+        private ObservableCollection<Order> _orders = new();
+        public ObservableCollection<Order> Orders
         {
             get => _orders;
             set

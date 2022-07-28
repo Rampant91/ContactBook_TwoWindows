@@ -1,11 +1,15 @@
 ﻿using ContactBook_TwoWindows.DbRealization;
+using ContactBook_TwoWindows.Models;
 using ContactBook_TwoWindows.ViewModels;
+using ContactsAndOrders.Commands.Async;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ContactBook_TwoWindows.Commands
 {
-    public class DeleteContactCommand : BaseCommand
+    public class DeleteContactCommand : BaseCommandAsync
     {
         private readonly ContactViewModel _contactViewModel;
 
@@ -27,16 +31,21 @@ namespace ContactBook_TwoWindows.Commands
             return _contactViewModel.SelectedContact != null;
         }
 
-        public override void Execute(object? parameter)
+        public override async Task ExecuteAsync(object? parameter)
         {
             var contact = _contactViewModel.SelectedContact;
-            using (DataContext db = new DataContext())
+            _contactViewModel.Contacts.Remove(contact);
+            await Task.Run(() => DeleteContact(contact));
+        }
+
+        private void DeleteContact(Contact contact) 
+        {
+            using (DataContext db = new())
             {
-                var contactDb = db.Contacts.FirstOrDefault(x => x.ContactId == contact.ContactId);
+                var contactDb = db.Contacts?.FirstOrDefault(x => x.ContactId == contact.ContactId);
                 if (contactDb != null)
                 {
-                    db.Contacts.Remove(contactDb);
-                    _contactViewModel.Contacts.Remove(contact);
+                    db.Contacts?.Remove(contactDb);
                     db.SaveChanges();
                 }
             }

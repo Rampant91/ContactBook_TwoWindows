@@ -32,7 +32,7 @@ namespace ContactBook_TwoWindows.Commands
         {
             OrdersWindow ordersWindow = new OrdersWindow()
             {
-                DataContext = new OrderViewModel(_contactViewModel.SelectedContact.ContactId)
+                DataContext = new OrderViewModel(_contactViewModel.SelectedContact!.ContactId)
             };
             ordersWindow.ShowDialog();
         }

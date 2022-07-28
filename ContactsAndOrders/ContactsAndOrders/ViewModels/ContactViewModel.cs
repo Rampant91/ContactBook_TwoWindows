@@ -17,8 +17,8 @@ namespace ContactBook_TwoWindows.ViewModels
         #endregion
 
         #region ObservableCollections
-        private ObservableCollection<Contact>? _contacts;
-        public ObservableCollection<Contact>? Contacts
+        private ObservableCollection<Contact> _contacts = new();
+        public ObservableCollection<Contact> Contacts
         {
             get => _contacts;
             set
@@ -28,8 +28,8 @@ namespace ContactBook_TwoWindows.ViewModels
             }
         }
 
-        private ObservableCollection<Order>? _orders;
-        public ObservableCollection<Order>? Orders
+        private ObservableCollection<Order> _orders = new();
+        public ObservableCollection<Order> Orders
         {
             get => _orders;
             set

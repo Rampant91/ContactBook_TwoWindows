@@ -1,11 +1,15 @@
 ﻿using ContactBook_TwoWindows.DbRealization;
+using ContactBook_TwoWindows.Models;
 using ContactBook_TwoWindows.ViewModels;
+using ContactsAndOrders.Commands.Async;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ContactBook_TwoWindows.Commands
 {
-    public class SaveContactCommand : BaseCommand
+    public class SaveContactCommand : BaseCommandAsync
     {
         private readonly ContactViewModel _contactViewModel;
 
@@ -36,12 +40,18 @@ namespace ContactBook_TwoWindows.Commands
             return _contactViewModel.SelectedContact != null && _contactViewModel.Editable == true;
         }
 
-        public override void Execute(object? parameter)
+        public override async Task ExecuteAsync(object? parameter)
+        {
+            Contact contact = _contactViewModel.SelectedContact!;
+            _contactViewModel.Editable = false;
+            await Task.Run(() => SaveContact(contact));
+        }
+
+        private void SaveContact(Contact contact)
         {
             using (DataContext db = new DataContext())
             {
-                var contact = _contactViewModel.SelectedContact;
-                var contactDb = db.Contacts.FirstOrDefault(x => x.ContactId == contact.ContactId);
+                var contactDb = db.Contacts?.FirstOrDefault(x => x.ContactId == contact.ContactId);
                 if (contactDb != null)
                 {
                     contactDb.FirstName = contact.FirstName;
@@ -51,9 +61,9 @@ namespace ContactBook_TwoWindows.Commands
                     contactDb.Address = contact.Address;
                     contactDb.Phone = contact.Phone;
                     contactDb.Email = contact.Email;
+                    Thread.Sleep(5000);
                     db.SaveChanges();
                 }
-                _contactViewModel.Editable = false;
             }
         }
     }

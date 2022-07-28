@@ -1,11 +1,14 @@
 ﻿using ContactBook_TwoWindows.DbRealization;
 using ContactBook_TwoWindows.Models;
 using ContactBook_TwoWindows.ViewModels;
+using ContactsAndOrders.Commands.Async;
 using System.ComponentModel;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ContactBook_TwoWindows.Commands
 {
-    public class AddOrderCommand : BaseCommand
+    public class AddOrderCommand : BaseCommandAsync
     {
         private OrderViewModel _orderViewModel;
 
@@ -28,16 +31,21 @@ namespace ContactBook_TwoWindows.Commands
             return true;
         }
 
-        public override void Execute(object? parameter)
+        public override async Task ExecuteAsync(object? parameter)
         {
-            using (DataContext db = new DataContext())
+            Order order = new();
+            order.ContactId = _orderViewModel.ContactId;
+            _orderViewModel.SelectedOrder = order;
+            _orderViewModel.Editable = true;
+            _orderViewModel.Orders.Add(order);
+            await Task.Run(() => AddOrder(order));
+        }
+
+        private static void AddOrder(Order order)
+        {
+            using (DataContext db = new())
             {
-                Order order = new Order();
-                order.ContactId = _orderViewModel.ContactId;
                 db.Orders.Add(order);
-                _orderViewModel.SelectedOrder = order;
-                _orderViewModel.Editable = true;
-                _orderViewModel.Orders.Add(order);
                 db.SaveChanges();
             }
         }

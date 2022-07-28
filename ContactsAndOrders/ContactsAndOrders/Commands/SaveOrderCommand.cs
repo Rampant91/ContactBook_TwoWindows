@@ -1,11 +1,15 @@
 ﻿using ContactBook_TwoWindows.DbRealization;
+using ContactBook_TwoWindows.Models;
 using ContactBook_TwoWindows.ViewModels;
+using ContactsAndOrders.Commands.Async;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ContactBook_TwoWindows.Commands
 {
-    public class SaveOrderCommand : BaseCommand
+    public class SaveOrderCommand : BaseCommandAsync
     {
         private readonly OrderViewModel _orderViewModel;
 
@@ -34,10 +38,16 @@ namespace ContactBook_TwoWindows.Commands
             return _orderViewModel.SelectedOrder != null && _orderViewModel.Editable == true;
         }
 
-        public override void Execute(object? parameter)
+        public override async Task ExecuteAsync(object? parameter)
         {
-            var order = _orderViewModel.SelectedOrder;
-            using (DataContext db = new DataContext())
+            Order order = _orderViewModel.SelectedOrder!;
+            _orderViewModel.Editable = false;
+            await Task.Run(() => SaveOrder(order));
+        }
+
+        private void SaveOrder(Order order)
+        {
+            using (DataContext db = new())
             {
                 var orderDb = db.Orders?.FirstOrDefault(x => x.OrderId == order.OrderId);
                 if (orderDb != null)
@@ -47,9 +57,9 @@ namespace ContactBook_TwoWindows.Commands
                     orderDb.Price = order.Price;
                     orderDb.Amount = order.Amount;
                     orderDb.Discription = order.Discription;
+                    Thread.Sleep(5000);
                     db.SaveChanges();
                 }
-                _orderViewModel.Editable = false;
             }
         }
     }
